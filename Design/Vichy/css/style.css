@@ -20,6 +20,7 @@
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box; 
+	font-family: 'nyala' !important;
 }
 
 html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,small, strike, strong, sub, sup, tt, var,b, u, i, center,dl, dt, dd, ol, ul, li,fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,time, mark, audio, video
@@ -211,7 +212,7 @@ ul.wpb_thumbnails-fluid > li,
 ul.wpb_thumbnails-fluid > li,
 .last_toggle_el_margin,
 .wpb_button {
-    margin-bottom: 35px;
+    margin-bottom: 0px;
 }
 
 .wpb_content_element {
@@ -289,7 +290,7 @@ body {
 
 
 body, p {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	color: #363636;
 	font-weight: 400;
@@ -322,7 +323,7 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: 0;
 }
 h1 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 18px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -331,7 +332,7 @@ h1 {
 	margin-bottom: 20px;
 }
 h2 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -340,7 +341,7 @@ h2 {
 	margin-bottom: 20px;
 }
 h3 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 13px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -349,7 +350,7 @@ h3 {
 	margin-bottom: 20px;
 }
 h4 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 12px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -358,7 +359,7 @@ h4 {
 	margin-bottom: 20px;
 }
 h5 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 11px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -367,7 +368,7 @@ h5 {
 	margin-bottom: 20px;
 }
 h6 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 10px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -389,7 +390,7 @@ h3.sidebar-title {
 	padding: 12px 15px 10px 15px;
 	font-size: 14px;
 	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 600;
 	color: #000;
 	margin-bottom: 10px;
@@ -664,7 +665,7 @@ body.admin-bar .header-wrapper.header1 .header-inner-wrapper  {
 	color: #777;
 	font-size: 14px;
 	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 400;
 	 -webkit-font-smoothing: antialiased; 
 	padding-bottom: 10px;
@@ -796,7 +797,7 @@ span.sf-sub-indicator {
 	color: #000;
 	border-bottom: 1px solid #e7e7e7;
 	font-size: 12px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 400;
 }
 
@@ -888,7 +889,7 @@ audio {
 		
 .post-showing-type1 .post-title a, .post-showing-type1 .post-title a span {
 	font-size: 15px !important;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	line-height: 1.2;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -945,7 +946,7 @@ audio {
 
 .post_content {
 	text-align: justify;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	color: #888;
 	font-weight: 400;
@@ -964,7 +965,7 @@ audio {
 		
 .post-showing-type1 .post-detail-single, .post-detail-single a {
 	color: #aaa;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 13px;
 	font-weight: 300;
 	font-style: italic;
@@ -1063,7 +1064,7 @@ audio {
 
 .post-detail-date {
 	float: left;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	text-transform: uppercase;
 	letter-spacing: 0.5px;
 	color: #aaa;
@@ -1293,7 +1294,7 @@ a.standard-read-more {
 	color: #bbb;
 	font-size: 12px;
 	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 400;
 }
 			
@@ -1667,7 +1668,7 @@ a.standard-read-more {
 [6. Comments  ]
 */
 #comments h1 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -1695,7 +1696,7 @@ a.standard-read-more {
 
 
 #comments p {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 1.5;
@@ -1723,7 +1724,7 @@ a.standard-read-more {
 }
 
 .reply a {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	text-transform: uppercase;
 	font-size: 11px;
 	font-weight: 600;
@@ -1806,7 +1807,7 @@ span.says {
 }
 
 .fn {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
  	font-size: 14px;
  	font-weight: 600;
  	font-style: normal;
@@ -1834,7 +1835,7 @@ span.says {
 	margin-bottom: 10px;
 	position: relative;
 	
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 }
 
 a.comment-edit-link {
@@ -1846,7 +1847,7 @@ a.comment-edit-link {
     border: none;
     box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.1);
     background: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
     font-size: 14px;
     line-height: 1.2;
     width: 100%;
@@ -1877,7 +1878,7 @@ a.comment-edit-link {
 	font-weight: 700;
 	font-size: 12px;
 	letter-spacing: 1px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	float: left;
 	border: none;
 }
@@ -1924,7 +1925,7 @@ a.comment-edit-link {
 	-webkit-font-smoothing: antialiased;
 	font-weight: 300;*/
 	
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -2007,7 +2008,7 @@ p.form-allowed-tags { margin-top: -5px !important;  }
 .under-footer {
 	background: #fff;
 	padding: 20px 0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 13px;
 	color: #888;
 	font-weight: 400;
@@ -2052,7 +2053,7 @@ p.form-allowed-tags { margin-top: -5px !important;  }
 
 .filter-cat a {
     margin: 0 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
     font-weight: 400;
     font-size: 14px;
 	color: #777;
@@ -2081,7 +2082,7 @@ p.form-allowed-tags { margin-top: -5px !important;  }
     border: 1px solid #e7e7e7;
     color: #777;
     font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
     outline: none;
     margin-left: 0;
     width: 100%;
@@ -2096,7 +2097,7 @@ p.form-allowed-tags { margin-top: -5px !important;  }
     font-size: 12px;
     position: relative;
     margin-bottom: -9px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
     outline: none;
 	margin-right: 0;
 }
@@ -2127,7 +2128,7 @@ input.wpcf7-form-control.wpcf7-captchar {
 
 .wpcf7 p {
     color: #222;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
     font-size: 11px;
     font-weight: 400;
     letter-spacing: 0px;
@@ -2162,7 +2163,7 @@ input.wpcf7-form-control.wpcf7-captchar {
 	margin-left: 0;
 	border: 1px solid #e7e7e7;
 	color: #000;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	text-transform: uppercase;
 	font-size: 14px;
 	letter-spacing: 1px;
@@ -2251,7 +2252,7 @@ div.wpcf7-mail-sent-ng {
 }
 
 .blockquote.type1 p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
     font-size: 20px;
     color: #000;
     line-height: 1.3;
@@ -2264,7 +2265,7 @@ div.wpcf7-mail-sent-ng {
 }
 
 .blockquote.type2 p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0px;
@@ -2285,7 +2286,7 @@ div.wpcf7-mail-sent-ng {
 }
 
 .blockquote.type3 p {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
 	font-size: 20px;
 	color: #000;
 	line-height: 1.6;
@@ -2341,7 +2342,7 @@ div.wpcf7-mail-sent-ng {
 	color: #000;
 	font-size: 20px;
 	font-weight: 600;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 }
 
 .circle-desc { 
@@ -2349,7 +2350,7 @@ div.wpcf7-mail-sent-ng {
 	font-size: 14px;
 	font-weight: 400;
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	text-transform: uppercase;
 }
 
@@ -2377,7 +2378,7 @@ div.wpcf7-mail-sent-ng {
    	margin-right: 15px;
 	background: #4ebdeb;
 	color: #fff;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 600;
 	padding: 0px 25px;
 }
@@ -2583,7 +2584,7 @@ ul.wpb_thumbnails-fluid > li,
 /* titles  */
 
 h2.titles, h2.wpb_heading {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -2605,7 +2606,7 @@ h2.wpb_heading {
 	top: 70px;
 }
 .portfolio-dimaond-welcome h2 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -2951,7 +2952,7 @@ h2.team-member-position {
 	font-style: italic;
 	font-size: 13px;
 	color: #888;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	text-transform: none;
 	font-weight: 400;
 	letter-spacing: 0;
@@ -3078,7 +3079,7 @@ ul.team-member-socials li a:hover {
 .service-content {
 	color: #555555;
 	font-size: 15px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 400;
 	line-height: 1.7;
 	margin: 20px 0;
@@ -3151,7 +3152,7 @@ ul.team-member-socials li a:hover {
 /* portfolio grid */
 
 .single-portfolio-grid {
-	margin-bottom: 60px;
+	margin-bottom: 10px;
 }
 .portfolio-grid-inside {
 	position: relative;
@@ -3404,7 +3405,7 @@ div.wpb_content_element.vc_portfolio_grid { margin-top: 30px; }
 	letter-spacing: 2px;
 }
 .vc_portfolio_overview h2 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -3428,7 +3429,7 @@ div.wpb_content_element.vc_portfolio_grid { margin-top: 30px; }
 	margin-bottom: 15px;
 }
 .single-portfolio-detail h3 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -3581,7 +3582,7 @@ a.portfolio_overview_url {
 	text-align: center;
 }
 .error-content1 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 200px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -3590,7 +3591,7 @@ a.portfolio_overview_url {
 	margin: 60px 0 -30px 0;
 }
 .error-content2 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 72px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -3598,7 +3599,7 @@ a.portfolio_overview_url {
 	color: #ccc;
 }
 .error-content3 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	text-transform: uppercase;
 	font-weight: 700;
@@ -3670,7 +3671,7 @@ a.portfolio_overview_url {
 	text-align: center;
 	display: block;
 	font-size: 13px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	position: absolute;
 	font-weight: 700;
 	font-style: italic;
@@ -3690,7 +3691,7 @@ a.portfolio_overview_url {
 
 .top-commented-date {
 	color: #bbbbbb;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 11px;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -3871,7 +3872,7 @@ a.portfolio_overview_url {
 
 /* sidebar calendar widget */
 #calendar_wrap  {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	
 }
 #calendar_wrap caption {
@@ -3889,7 +3890,7 @@ a.portfolio_overview_url {
 }
 #calendar_wrap th {
 	color: #000;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 600;
 	border: none;
 	font-size: 16px;
@@ -3898,7 +3899,7 @@ a.portfolio_overview_url {
 	padding-left: 9px;
     padding-right: 8px;
     
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'nyala';
 	font-weight: 400;
 	color: #000;
 	text-decoration: none;
@@ -3911,7 +3912,7 @@ a.portfolio_overview_url {
 	border: none;
 }
 #calendar_wrap a {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 400;
 	color: #000;
 	text-decoration: none;
@@ -4014,7 +4015,7 @@ ul#recentcomments li a:hover {
 
 .widget_recent_entries span.post-date {
 	color: #bbbbbb;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 11px;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -4146,14 +4147,14 @@ ul#recentcomments li a:hover {
 
 .latest-post-widget-categories {
 	color: #bbbbbb;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 11px;
 	font-weight: 400;
 	text-transform: uppercase;
 }
 .latest-post-widget-categories a {
 	color: #bbbbbb;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 11px;
 	font-weight: 400;
 	text-transform: uppercase;
@@ -4190,7 +4191,7 @@ div.widget_search.search_page_search_form { margin: 20px 0; }
 	padding: 15px 35px 15px 15px;
 	font-size: 13px;
 	margin-bottom: 10px;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 400;
 	z-index: 2;
 	display: block;
@@ -4214,7 +4215,7 @@ input, textarea {
 }
 
 .search-results-found {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 600;
 	text-transform: uppercase;
 	color: #000;
@@ -4246,7 +4247,7 @@ input, textarea {
 	color: #bbb;
 	font-size: 12px;
 	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-weight: 400;
 }
 			
@@ -4270,7 +4271,7 @@ textarea:focus,
 	padding: 8px 24px;
 	color: #fff;
 	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 14px;
 	font-weight: 700;
 	display: inline-block;
@@ -4328,7 +4329,7 @@ textarea:focus,
 	float: left;
 }
 p.author-description {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 16px;
 	color: #555;
 	font-weight: 300;
@@ -4350,7 +4351,7 @@ p.author-description {
 }
 
 .search-title2 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 24px;
 	color: #fff;
 	font-weight: 300;
@@ -4404,7 +4405,7 @@ p.author-description {
 	margin-top: -40px; 
 	padding: 15px 40px 0 40px;
 	color: #a5b4e4;  
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 72px;
 	letter-spacing: -7px;   
 	font-weight: 700; 
@@ -4475,7 +4476,7 @@ h1.widget-title-insta {
 	text-align: center;
 	color: #000;
 	padding: 15px 0;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'nyala';
 	font-size: 16px;
 	text-transform: uppercase;
 	font-weight: 700;
