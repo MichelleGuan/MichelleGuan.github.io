@@ -753,6 +753,9 @@ span.sf-sub-indicator {
 
 .mobile-menu-icon {
 	font-size: 32px;
+	background-image: url(images/icons/arrow.png);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 .mobile-menu-show, .mobile-menu-wrapper {
 	display: none;
