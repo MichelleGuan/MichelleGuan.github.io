@@ -1978,7 +1978,8 @@ p.form-allowed-tags { margin-top: -5px !important;  }
      -moz-transition-property:    -moz-transform, opacity;
       -ms-transition-property:     -ms-transform, opacity;
        -o-transition-property:      -o-transform, opacity;
-          transition-property:         transform, opacity;
+		  transition-property:         transform, opacity;
+		  width: 90%;
 }
 
 /**** disabling Isotope CSS3 transitions ****/
