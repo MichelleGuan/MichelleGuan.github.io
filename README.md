@@ -1,2 +1,2 @@
 # MichelleGuan.github.io
-A website I made for my friends.
+A simple website I made for my friends.
