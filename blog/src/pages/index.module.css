@@ -20,4 +20,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 20px;
+}
+
+.buttonsFirst{
+  background-color: #61d9fa;
+  background-color: #61d9fa;
+  display: block;
+}
+.buttonsSecond{
+  color: #61d9fa;
+  display: block;
+}
+.buttonsFirst:hover{
+  background-color: white;
+}
+.buttonsSecond:hover{
+  color: white;
 }

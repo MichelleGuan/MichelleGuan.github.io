@@ -1,0 +1,7 @@
+---
+sidebar_position: 3
+---
+
+# CMS Part
+ - Django CMS has build-in admin page and permission system, and can intergrate Front-end enverionment for preview(currently native JS CSS and gulp, we can also use react, scss, webpack and so on as I tested). We write addon including model.py that generate SQL to update postgreSQL, and admin.py to edit CMS management page, and app.py for specific bussiness logic. Addons are small features that can be set to certain type articles, publisher can choose and edit them, for example, a sticky-footer addon can be used on common articles, after publisher edit and deploy content, django CMS will stored them to database follow model.py parttern, and then all data stored will be generate to a XML formated as setting and set to back-end.   
+ - We use docker to provide container service and doing packge through conmand docker-compose build, which will generate init.py. Divio cloud will take all package job, and all static resource like image will be intercepted after publisher deplopy articles, they will be sent to AWS target site for CDN. We also use rabbitMQ since we have several server(actually four), and add job like edit articles might be duplicated. We set up different CMS sites for each country, for common articles, they are stored in master site. Currently we use Urban Deploy and as metioned, static resource will be sent to AWS(will have cache issue) while others are updated to Back-end database.

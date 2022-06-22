@@ -6,18 +6,17 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
+  projectName: 'MichelleGuan.github.io',
+  organizationName: 'MichelleGuan',
+  trailingSlash: false,
   title: "Michelle's Blog",
-  tagline: "Michelle's Blog",
+  tagline: "Tech otakus save the world",
   url: 'https://michelleguan.github.io',
-  baseUrl: '/blog/',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'MichelleGuan', // Usually your GitHub org/user name.
-  projectName: 'MichelleGuan.github.io', // Usually your repo name.
+  deploymentBranch: 'master',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -34,17 +33,9 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -57,21 +48,17 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
-        logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
-        },
+        title: 'HomePage',
         items: [
           {
             type: 'doc',
             docId: 'intro',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Confluence',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: 'blog/Resume', label: 'Resume', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
+            href: 'https://github.com/MichelleGuan',
             label: 'GitHub',
             position: 'right',
           },
@@ -84,25 +71,17 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Confluence',
+                to: '/docs/category/project-review',
               },
             ],
           },
           {
-            title: 'Community',
+            title: 'Blog',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Blog',
+                to: 'blog/Resume',
               },
             ],
           },
@@ -110,17 +89,20 @@ const config = {
             title: 'More',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
+                label: 'Algorithms Practice',
+                to: 'https://github.com/MichelleGuan/Algorithms-and-data-stuctures',
               },
               {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Unity UGUI demo',
+                href: 'https://github.com/MichelleGuan/Xlua_UGUI_Demo',
+              },
+              {
+                label: 'taxForm_miniApp',
+                href: 'https://github.com/MichelleGuan/taxForm_miniApp',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

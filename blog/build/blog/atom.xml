@@ -1,70 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://michelleguan.github.io/blog/blog</id>
+    <id>https://michelleguan.github.io/blog</id>
     <title>Michelle's Blog Blog</title>
-    <updated>2021-08-26T00:00:00.000Z</updated>
+    <updated>2022-06-22T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://michelleguan.github.io/blog/blog"/>
+    <link rel="alternate" href="https://michelleguan.github.io/blog"/>
     <subtitle>Michelle's Blog Blog</subtitle>
-    <icon>https://michelleguan.github.io/blog/img/favicon.ico</icon>
+    <icon>https://michelleguan.github.io/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Welcome]]></title>
-        <id>welcome</id>
-        <link href="https://michelleguan.github.io/blog/blog/welcome"/>
-        <updated>2021-08-26T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Docusaurus blogging features are powered by the blog plugin.]]></summary>
-        <content type="html"><![CDATA[<p><a href="https://docusaurus.io/docs/blog" target="_blank" rel="noopener noreferrer">Docusaurus blogging features</a> are powered by the <a href="https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog" target="_blank" rel="noopener noreferrer">blog plugin</a>.</p><p>Simply add Markdown files (or folders) to the <code>blog</code> directory.</p><p>Regular blog authors can be added to <code>authors.yml</code>.</p><p>The blog post date can be extracted from filenames, such as:</p><ul><li><code>2019-05-30-welcome.md</code></li><li><code>2019-05-30-welcome/index.md</code></li></ul><p>A blog post folder can be convenient to co-locate blog post images:</p><p><img loading="lazy" alt="Docusaurus Plushie" src="/blog/assets/images/docusaurus-plushie-banner-a60f7593abca1e3eef26a9afa244e4fb.jpeg" width="1500" height="500" class="img_ev3q"></p><p>The blog supports tags as well!</p><p><strong>And if you don't want a blog</strong>: just delete this directory, and use <code>blog: false</code> in your Docusaurus config.</p>]]></content>
-        <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
-        </author>
-        <author>
-            <name>Yangshun Tay</name>
-            <uri>https://github.com/yangshun</uri>
-        </author>
-        <category label="facebook" term="facebook"/>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
+        <title type="html"><![CDATA[中文简历]]></title>
+        <id>中文简历</id>
+        <link href="https://michelleguan.github.io/blog/中文简历"/>
+        <updated>2022-06-22T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[E-mail: 975684953@qq.com]]></summary>
+        <content type="html"><![CDATA[<p>E-mail: <a href="mailto:975684953@qq.com" target="_blank" rel="noopener noreferrer">975684953@qq.com</a><br>
+<!-- -->Wechat: disconsolatevs<br>
+<!-- -->Education：西北农林科技大学(985)<br>
+<!-- -->Language：Mandarin-1st，English-proficient<br>
+<!-- -->Visa：Chinese nationality，Australian PR  </p><p>一个自学出身的程序，五年IT行业工作经验，四前端开发经验。自我驱动，爱技术，爱学习，前端使用react技术栈，也有过游戏以及微信小程序开发经历。英语良好，有海外工作经历，适应敏捷开发，有比较好的沟通能力和责任心推动需求落地。
+在工作中除开发外也一直承担团队建设的职责，拍过部门宣传片，组织过前端知识分享。
+从去年开始，意识到计算机基础的重要性，正逐步学习计算机网络，算法数据结构以及更底层的语言，还在前进道路上。
+希望加入技术驱动的团队，编写维护高质量代码，能接触到更多有趣的新技术，可以不断学习成长。</p><p>Web前端与CMS开发<br>
+<a href="http://www.fidelity.com.cn/zh-cn/index.html" target="_blank" rel="noopener noreferrer">Fidelity International(富达国际)</a> <a href="https://fortune.com/fortune500/2022/search/?name=fidelity" target="_blank" rel="noopener noreferrer">(世界500强)</a>| 02/2019 – 06/2022<br>
+<!-- -->Background: 富达国际是一家以共有基金管理为主的世界最大的投资管理公司之一，是美国富达投资集团所有非本土业务的延伸。大客户平台的开发团队成员来自德国,英国,印度,中国,采用敏捷开发模式迭代。前端一套代码为全球二十多个国家提供个性化内容和服务，已经迭代维护八年。<br>
+<!-- -->JobDuties:<br>
+<!-- -->•编写富达全球大客户平台的前端和中间层代码<br>
+<!-- -->•使用react-redux/sass/foundation/webpack/git/Highcharts 开发新功能和组件<br>
+<!-- -->•进行backbone/marionette 老代码的迁移和重构<br>
+<!-- -->•去年使用python/DjangoCMS/postgreSQL编写CMS系统组件<br>
+<!-- -->Achievement:<br>
+<!-- -->•完成了多个较为复杂的前端工作，如前端用户内容权限系统，内容团队可自由定制的全页面UI组件，中东新站点的全部前端和数据工作，多国家复用逻辑UI可配置的基金计算器，PDF可配置模版等。<br>
+<!-- -->•承担了较多团队工作以及部分CMS工作，拿到了两个successful绩效以及今年的outstanding绩效。<br>
+<!-- -->•做了一些技术上的探索，比如如何链接react和marionette，如何跨框架进行单元测试，并和其他两个前端合作做了项目的react组件库。<br>
+<!-- -->•19年参加了公司的代码项目比赛code-a-thon，带领5人前端团队用d3.js和Three.js完成了一个可视化的环保项目并拿到冠军。  </p><p>前端开发 / 微信小程序开发<br>
+<!-- -->WeBoost Technology(澳大利亚本土企业)| 06/2018 – 12/2018<br>
+<!-- -->•使用H5/CSS3/JS/VUE技术栈编写前端程序<br>
+<!-- -->•编写微信小程序前端部分，独立完成了澳洲购物退税助手，南澳商场订车等前端小程序<br>
+<!-- -->Background: 在墨尔本的一家本地创业公司担任前端开发，和当地程序合作完成网站和微信小程序。  </p><p>游戏前端开发 (技术管理培训生)<br>
+<!-- -->Dotwin Technology(传奇页游开发公司南京分部) | 12/2017 – 05/2018<br>
+<!-- -->•使用Unity 游戏引擎以及C#编写游戏<br>
+<!-- -->•编写在线卡牌RPG 游戏(类似灵妖记)以及棋牌游戏<br>
+<!-- -->•负责游戏热更新部分,使用Xlua 热更框架<br>
+<!-- -->Achievement: 使用公司的框架完成游戏UI 部分. 使用lua重构需要热更新的UI 板块,使用MVC 模式和委托方法在主控制器实现数据分离,便于替换数据包热更新. 通过GitHub 学习Xlua,以及动画的插件比如dotween。空闲时间和后端同事一起做了公司软件自动下载的页面并投入使用。  </p><p>IT技术支持<br>
+<a href="https://zh.wikipedia.org/wiki/%E5%BE%B7%E9%93%81%E4%BF%A1%E5%8F%AF" target="_blank" rel="noopener noreferrer">DB Schenker</a>(德国铁路股份公司一个业务部门) | 06/2016 – 12/2017<br>
+<!-- -->•维护德国铁路网站系统ECM(JavaScript/jQuery)<br>
+<!-- -->•提供SharePoint/ eSchenker 系统7<!-- -->*<!-- -->24 技术支持<br>
+<!-- -->Achievement: 在公司快速学习IT 知识,在技术测试上得到较高分数。</p>]]></content>
+        <category label="Resume" term="Resume"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[MDX Blog Post]]></title>
-        <id>mdx-blog-post</id>
-        <link href="https://michelleguan.github.io/blog/blog/mdx-blog-post"/>
-        <updated>2021-08-01T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Blog posts support Docusaurus Markdown features, such as MDX.]]></summary>
-        <content type="html"><![CDATA[<p>Blog posts support <a href="https://docusaurus.io/docs/markdown-features" target="_blank" rel="noopener noreferrer">Docusaurus Markdown features</a>, such as <a href="https://mdxjs.com/" target="_blank" rel="noopener noreferrer">MDX</a>.</p><div class="admonition admonition-tip alert alert--success"><div class="admonition-heading"><h5><span class="admonition-icon"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="16" viewBox="0 0 12 16"><path fill-rule="evenodd" d="M6.5 0C3.48 0 1 2.19 1 5c0 .92.55 2.25 1 3 1.34 2.25 1.78 2.78 2 4v1h5v-1c.22-1.22.66-1.75 2-4 .45-.75 1-2.08 1-3 0-2.81-2.48-5-5.5-5zm3.64 7.48c-.25.44-.47.8-.67 1.11-.86 1.41-1.25 2.06-1.45 3.23-.02.05-.02.11-.02.17H5c0-.06 0-.13-.02-.17-.2-1.17-.59-1.83-1.45-3.23-.2-.31-.42-.67-.67-1.11C2.44 6.78 2 5.65 2 5c0-2.2 2.02-4 4.5-4 1.22 0 2.36.42 3.22 1.19C10.55 2.94 11 3.94 11 5c0 .66-.44 1.78-.86 2.48zM4 14h5c-.23 1.14-1.3 2-2.5 2s-2.27-.86-2.5-2z"></path></svg></span>tip</h5></div><div class="admonition-content"><p>Use the power of React to create interactive blog posts.</p><div class="language-js codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#393A34;--prism-background-color:#f6f8fa"><div class="codeBlockContent_biex"><pre tabindex="0" class="prism-code language-js codeBlock_bY9V thin-scrollbar"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#393A34"><span class="token operator" style="color:#393A34">&lt;</span><span class="token plain">button onClick</span><span class="token operator" style="color:#393A34">=</span><span class="token punctuation" style="color:#393A34">{</span><span class="token punctuation" style="color:#393A34">(</span><span class="token punctuation" style="color:#393A34">)</span><span class="token plain"> </span><span class="token arrow operator" style="color:#393A34">=&gt;</span><span class="token plain"> </span><span class="token function" style="color:#d73a49">alert</span><span class="token punctuation" style="color:#393A34">(</span><span class="token string" style="color:#e3116c">'button clicked!'</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token operator" style="color:#393A34">&gt;</span><span class="token maybe-class-name">Click</span><span class="token plain"> me</span><span class="token operator" style="color:#393A34">!</span><span class="token operator" style="color:#393A34">&lt;</span><span class="token operator" style="color:#393A34">/</span><span class="token plain">button</span><span class="token operator" style="color:#393A34">&gt;</span><br></span></code></pre><div class="buttonGroup__atx"><button type="button" aria-label="Copy code to clipboard" title="Copy" class="clean-btn"><span class="copyButtonIcons_eSgA" aria-hidden="true"><svg class="copyButtonIcon_y97N" viewBox="0 0 24 24"><path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z"></path></svg><svg class="copyButtonSuccessIcon_LjdS" viewBox="0 0 24 24"><path d="M21,7L9,19L3.5,13.5L4.91,12.09L9,16.17L19.59,5.59L21,7Z"></path></svg></span></button></div></div></div><button>Click me!</button></div></div>]]></content>
-        <author>
-            <name>Sébastien Lorber</name>
-            <uri>https://sebastienlorber.com</uri>
-        </author>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Long Blog Post]]></title>
-        <id>long-blog-post</id>
-        <link href="https://michelleguan.github.io/blog/blog/long-blog-post"/>
-        <updated>2019-05-29T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is the summary of a very long blog post,]]></summary>
-        <content type="html"><![CDATA[<p>This is the summary of a very long blog post,</p><p>Use a <code>&lt;!--</code> <code>truncate</code> <code>--&gt;</code> comment to limit blog post size in the list view.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Endilie Yacop Sucipto</name>
-            <uri>https://github.com/endiliey</uri>
-        </author>
-        <category label="hello" term="hello"/>
-        <category label="docusaurus" term="docusaurus"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[First Blog Post]]></title>
-        <id>first-blog-post</id>
-        <link href="https://michelleguan.github.io/blog/blog/first-blog-post"/>
-        <updated>2019-05-28T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet]]></summary>
-        <content type="html"><![CDATA[<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque elementum dignissim ultricies. Fusce rhoncus ipsum tempor eros aliquam consequat. Lorem ipsum dolor sit amet</p>]]></content>
-        <author>
-            <name>Gao Wei</name>
-            <uri>https://github.com/wgao19</uri>
-        </author>
-        <category label="hola" term="hola"/>
-        <category label="docusaurus" term="docusaurus"/>
+        <title type="html"><![CDATA[Resume]]></title>
+        <id>Resume</id>
+        <link href="https://michelleguan.github.io/blog/Resume"/>
+        <updated>2022-06-21T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[E-mail: 975684953@qq.com]]></summary>
+        <content type="html"><![CDATA[<p>E-mail: <a href="mailto:975684953@qq.com" target="_blank" rel="noopener noreferrer">975684953@qq.com</a><br>
+<!-- -->Wechat: disconsolatevs<br>
+<!-- -->Education：<a href="https://en.wikipedia.org/wiki/Northwest_A%26F_University" target="_blank" rel="noopener noreferrer">Northwest A&amp;F University</a> <a href="https://www.topuniversities.com/universities/northwest-agriculture-forestry-university" target="_blank" rel="noopener noreferrer">(QS Link)</a><br>
+<!-- -->Language：Mandarin-1st，English-proficient<br>
+<!-- -->Visa：Chinese nationality，Australian PR  </p><p>I'm a 28 years old front-end developer currently base in China has over 5 years' working experience on programming. To be specific, 3.5 years on react technology stack, 0.5 year on Wechat mini app, and 1 year on Unity game development. I coding in JavaScript, lua, C#, python.<br>
+<!-- -->As a self-educated programmer, I'm a fast learner who is highly interested in new IT technologies. Coding as an adult blocks game encourage me to build my own world and solve puzzles which is really cool. So at least for me, I'm not only writing programs for living, but also for fun. And I'm a self-challenge person and always have a can-do attitude, those characteristics makes me a responsible team player. I was also a debater which means I'm good at persuade others and not afraid about public presentations. Personally, I’m willing to communicate with people even they come from different culture backgrounds.</p><p>FRONT-END and CMS DEVELOPER<br>
+<a href="https://en.wikipedia.org/wiki/Fidelity_International" target="_blank" rel="noopener noreferrer">Fidelity International</a> <a href="https://fortune.com/fortune500/2022/search/?name=fidelity" target="_blank" rel="noopener noreferrer">(fortune500)</a> | 02/2019 – 06/2022<br>
+<!-- -->•	Working on Global digital platform which supports all Fidelity wholesale websites that contain 18 countries<br>
+<!-- -->•	Coding FE including Highcharts, react, webpack and so on<br>
+<!-- -->•	Coding Django CMS plugins, for content management<br>
+<!-- -->Achievement: Being a part of a global team, working on large multisite fund project. Won code a thon competition 2019 as a team, we used D3/ three.js build a highly interactive and data virtualization site. Support both FE and CMS team, solving challenging issues including routing and pro system, and get team nomination this year.  </p><p>FRONT-END DEVELOPER<br>
+<!-- -->WeBoost Technology Australia | 06/2018 – 12/2018<br>
+<!-- -->•	Coding front-end in H5/CSS3/JS<br>
+<!-- -->•	Using MVC frameworks including VUE<br>
+<!-- -->•	Writing commercial websites and WeChat mini programs<br>
+<!-- -->Achievement: Being front-end developer in a Melbourne based local start-up company and coding outsourcing projects. Cooperating with local back-end developers and Taiwan designer. Finalize details with costumers and being responsible for the project quality since we didn’t have a product manager yet.   </p><p>GAME DEVELOPER<br>
+<!-- -->Dotwin Technology Nanjing| 12/2017 – 05/2018<br>
+<!-- -->•	Coding in C# and lua on Unity<br>
+<!-- -->•	Writing front-end part of online RPG games<br>
+<!-- -->•	Being responsible for hotfix part(Using Xlua)<br>
+<!-- -->Achievement: Finishing all UI parts with MVC framework, which is developed by the other team numbers. And using lua that is procedure-oriented to realize the MVC framework in order to separate data. Learning Xlua and animation plug-in on GitHub and teach the other team numbers. Help to build company software download website on free time.  </p><p>IT Support<br>
+<a href="https://en.wikipedia.org/wiki/DB_Schenker" target="_blank" rel="noopener noreferrer">DB Schenker</a>(A division of German rail) | 06/2016 – 12/2017<br>
+<!-- -->•Maintence company website ECM(JavaScript/jQuery)<br>
+<!-- -->•Providing SharePoint/ eSchenker system 7<!-- -->*<!-- -->24 IT support</p>]]></content>
+        <category label="Resume" term="Resume"/>
     </entry>
 </feed>
