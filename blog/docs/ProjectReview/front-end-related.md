@@ -1,9 +1,9 @@
 ---
 sidebar_position: 2
+description: 'Package,Routing,Security,UT'
 ---
 
 # Front End Related
-Package, Routing, Security, Unit testing
 ### Package
 - We use UglifyJS to minify code, as it removes whitespace and unnecessary characters within a file to make it smaller and thus, load faster. It also provide options to remove unreachable code and reduce variables/property characters. However Uglify will not auto obfuscate your code, it has mangle options and you need to manually set it, also remember to close warning and sorceMap on Prod.  
 - For versions,  DefinePlugin replaces variables in code with other values or expressions at compile time, so we add it at the bottom of plugins to replace versionHash, env options and path. And we change output chunkFileName to include versionHash, which will update chunk name each time we deploy for version management and avoid cache-control issue(default will be no-cache and return 304 Not Modified when assets name don't change [See more: http caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)).  

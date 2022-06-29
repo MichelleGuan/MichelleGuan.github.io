@@ -1,9 +1,9 @@
 ---
 sidebar_position: 1
+description: 'Tech&Features,Intl,Theming,DataFlow'
 ---
 
 # Front End Core
-Technology Stack, Features, Internationalization, Theming, Data Flow
 ### Technology Stack
 - The old Front-end project is based on handlebar.js and mariontte.js, which simplifies Backbone application code with robust views and architecture solutions including router. Then we add react as mariontte child view, and build all new features with react/redux. And on next-stage FE project which was also on development, we use react and rxjs. Both project choose flow.js as static type checker, and sass as css extension, we also use storybook, webpack, highchart.js. On old project we use foundation based sass library doing cutomized abstract varibles and mixins, and we have diferrent theming.
 - After dalian team take over, we build a react form widgets using formik, provide components including selectBox, checkBox, inpt, button, radio, textArea and so on. And all components are wrapped with HOC to provide error handling and validation services. We also create a react wrapper service base on marionette, using bundle-loader to load moudules and chart depenedencies, and onAttach() call react render method to createFactory as entry view and onDestoty() call react dom unmountComponentAtNode, so all new react components can be managed in react-adapter and easy to migrate to new project.

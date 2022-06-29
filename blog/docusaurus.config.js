@@ -47,12 +47,18 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      algolia: {
+        appId: 'YOUR_APP_ID',
+        apiKey: 'YOUR_SEARCH_API_KEY',
+        indexName: 'YOUR_INDEX_NAME',
+        contextualSearch: true,
+      },
       navbar: {
         title: 'HomePage',
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: '/category/ProjectReview',
             position: 'left',
             label: 'Confluence',
           },
@@ -72,7 +78,7 @@ const config = {
             items: [
               {
                 label: 'Confluence',
-                to: '/docs/category/project-review',
+                to: 'docs/category/ProjectReview',
               },
             ],
           },
@@ -109,6 +115,7 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+    
 };
 
 module.exports = config;
