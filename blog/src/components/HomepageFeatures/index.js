@@ -7,7 +7,7 @@ const FeatureList = [
     title: 'Profile',
     description: (
       <>
-        I'm a 28 years old front-end developer currently base in China, graduated from one of the project 985 universities and has over 5 years' working experience on programming. To be specific, 3.5 years on react technology stack, 0.5 year on Wechat mini app, and 1 year on Unity game development. I coding in JavaScript, lua, C#, python.
+        I'm a 28 years old front-end developer graduated from project 985 universities and has over 6 years' working experience on IT industry. To be specific, 3.5 years on Front-End/CMS/AWS, 0.5 year on WeChat mini app, 1 year on Unity3D development and 1 year on IT support. I coding in JavaScript, LUA/C, C#, python and worked for two fortune 500 companies.
       </>
     ),
   },
@@ -15,7 +15,7 @@ const FeatureList = [
     title: 'Background',
     description: (
       <>
-        As a self-educated programmer, I'm a fast learner who is  highly interested in new IT technologies. Coding as an adult blocks game encourage me to build my own world and solve puzzles which is really cool. So at least for me, I'm not only writing programs for living, but also for fun.
+        Besides, I'm a fast learner who is highly interested in new IT technologies. Coding as an adult blocks game encourage me to build my own world and solve puzzles which is really cool. So at least for me, I'm not only writing programs for living, but also for fun.
       </>
     ),
   },
@@ -23,7 +23,7 @@ const FeatureList = [
     title: 'Characteristics',
     description: (
       <>
-        I'm a self-challenge person and always have a can-do attitude, those characteristics makes me a responsible team player. I was also a debater which means I'm good at persuade others and not afraid about public presentations. Personally, I’m willing to communicate with people even they come from different culture backgrounds.
+        I'm a self-challenge person and always have a can-do attitude, those characteristics makes me a responsible team player. I was also a debater which means I have good people skills. Personally, I’m willing to communicate with people come from different culture backgrounds. Besides, I have oversea working experience and Australia PR.
       </>
     ),
   },
