@@ -50,6 +50,20 @@ const sidebars = {
     },
     {
       type: "category",
+      label: "JavaScript",
+      collapsed: false,
+      link: {
+        type: "generated-index",
+        title: "JavaScript",
+        slug: "/category/JavaScript"
+      },
+      items: [
+        "JavaScript/basic",
+        "JavaScript/extra"
+      ],
+    },
+    {
+      type: "category",
       label: "UnityLearningNotes(Chinese Version)",
       collapsed: true,
       link: {
