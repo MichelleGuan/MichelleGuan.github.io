@@ -4,7 +4,7 @@
   <ShortName>Michelle&#39;s Blog</ShortName>
   <Description>Search Michelle&#39;s Blog</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://michelleguan.github.io/img/favicon.ico</Image>
+  <Image width="16" height="16" type="image/x-icon">https://michelleguan.github.io/https://avatars.githubusercontent.com/u/27564576?v=4</Image>
   <Url type="text/html" method="get" template="https://michelleguan.github.io/search?q={searchTerms}"/>
   <Url type="application/opensearchdescription+xml" rel="self" template="https://michelleguan.github.io/opensearch.xml" />
   <moz:SearchForm>https://michelleguan.github.io/</moz:SearchForm>
