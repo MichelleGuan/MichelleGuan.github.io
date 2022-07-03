@@ -16,6 +16,14 @@
   }
 }
 
+.section {
+  padding: 72px 0;
+}
+
+.sectionAlt {
+  background-color: var(--ifm-color-emphasis-100);
+}
+
 .buttons {
   display: flex;
   align-items: center;
@@ -37,4 +45,20 @@
 }
 .buttonsSecond:hover{
   color: white;
+}
+
+.friendsSection > :global(.col) > * {
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 996px) {
+  .friendsSection > :global(.col:last-child) > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 997px) {
+  .friendsSection > :global(.col) > *:last-child {
+    margin-bottom: 0;
+  }
 }

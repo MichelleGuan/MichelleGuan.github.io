@@ -2,7 +2,7 @@ import React from 'react';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
-const FeatureList = [
+const Features = [
   {
     title: 'Profile',
     description: (
@@ -40,12 +40,12 @@ function Feature({title, description}) {
   );
 }
 
-export default function HomepageFeatures() {
+export default function FeatureList() {
   return (
     <section className={styles.features}>
       <div className="container">
         <div className="row">
-          {FeatureList.map((props, idx) => (
+          {Features.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>

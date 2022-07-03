@@ -15,7 +15,7 @@ const config = {
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'https://avatars.githubusercontent.com/u/27564576?v=4',
   deploymentBranch: 'master',
 
   // Even if you don't use internalization, you can use this field to set useful

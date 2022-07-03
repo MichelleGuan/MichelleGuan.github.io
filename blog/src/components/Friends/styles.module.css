@@ -1,0 +1,11 @@
+.friend {
+    font-size: 15px;
+  }
+  
+.frinedMeta {
+    color: var(--ifm-color-emphasis-700);
+  }
+  
+.friendMeta strong {
+    color: var(--ifm-font-color-base);
+  }

@@ -3,7 +3,9 @@ import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import FeatureList from '../components/FeatureList';
+import Friend from '../components/Friends';
+import Friends, {type FriendsItem} from '../components/Friends/data';
 
 import styles from './index.module.css';
 
@@ -33,6 +35,32 @@ function HomepageHeader() {
   );
 }
 
+function FriendsSection() {
+  const friendsColumns: FriendsItem[][] = [[], [], []];
+  Friends.filter((friend) => friend.showOnHomepage).forEach((friend, i) =>
+  friendsColumns[i % 3]!.push(friend),
+  );
+
+  return (
+    <div className={clsx(styles.section, styles.sectionAlt)}>
+      <div className="container">
+        <h2 className={clsx('margin-bottom--lg', 'text--center')}>
+          <p>My Friends' Blog</p>
+        </h2>
+        <div className={clsx('row', styles.friendsSection)}>
+          {friendsColumns.map((friendsItem, i) => (
+            <div className="col col--4" key={i}>
+              {friendsItem.map((friend) => (
+                <Friend {...friend} key={friend.url} />
+              ))}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -41,7 +69,8 @@ export default function Home() {
       description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+        <FeatureList />
+        <FriendsSection />
       </main>
     </Layout>
   );
