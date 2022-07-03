@@ -91,7 +91,7 @@ const config = {
             items: [
               {
                 label: 'Goto the Blog Repo',
-                to: 'https://github.com/MichelleGuan/MichelleGuan.github.ioe',
+                to: 'https://github.com/MichelleGuan/MichelleGuan.github.io',
               },
             ],
           },

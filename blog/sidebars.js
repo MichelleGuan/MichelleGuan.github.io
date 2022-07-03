@@ -51,7 +51,7 @@ const sidebars = {
     {
       type: "category",
       label: "UnityLearningNotes(Chinese Version)",
-      collapsed: false,
+      collapsed: true,
       link: {
         type: "generated-index",
         title: "UnityLearningNotes(Chinese Version)",
