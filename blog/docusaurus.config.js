@@ -77,17 +77,21 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Confluence',
-                to: 'docs/category/ProjectReview',
+                label: 'AWS',
+                to: 'docs/AWS',
+              },
+              {
+                label: 'ComputerNetworking',
+                to: 'docs/category/ComputerNetworking',
               },
             ],
           },
           {
-            title: 'Blog',
+            title: 'Contribution',
             items: [
               {
-                label: 'Blog',
-                to: 'blog/Resume',
+                label: 'Goto the Blog Repo',
+                to: 'https://github.com/MichelleGuan/MichelleGuan.github.ioe',
               },
             ],
           },
