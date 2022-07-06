@@ -58,8 +58,8 @@ const sidebars = {
         slug: "/category/JavaScript"
       },
       items: [
-        "JavaScript/basic",
-        "JavaScript/extra"
+        "JavaScript/professionalJavaScriptforWebDeveloper",
+        "JavaScript/howJavaScriptWorks"
       ],
     },
     {
