@@ -193,3 +193,109 @@ pet.prototype.say = function () {
 let petA = new pet()
 petA.say()
 ```
+- 继承除了原型链继承（共享属性）还有盗用构造函数继承,子类调用父类构造函数，使每个实例都能有自己的属性，而且可以向父类传参。
+```js
+function superType(name) {
+    this.name  = name
+    this.color = ['red','blue']
+}
+function extendType() {
+    superType.call(this,'newColor')
+}
+let instance1 = new extendType()
+instance1.color.push('yellow')
+let instance2 = new superType('haha')
+console.log(instance1.color, instance2.color, instance1.name, instance2.name)
+//[ 'red', 'blue', 'yellow' ] [ 'red', 'blue' ] newColor haha
+```
+- 组合继承
+使用原型链继承属性和方法，使用盗用构造函数继承实例属性。但存在效率问题需要调用两次父类型构造函数（superType.call(this, name)，extendType.prototype = new superType()）
+```js
+function superType(name) {
+    this.name  = name
+    this.color = ['red','blue']
+}
+superType.prototype.sayName = function () {
+    console.log(this.name)
+}
+function extendType(name, age) {
+    superType.call(this, name)
+    this.age = age
+}
+extendType.prototype = new superType()
+let instance1 = new extendType('ha','11')
+instance1.color.push('yellow')
+let instance2 = new extendType('haha','22')
+instance1.sayName() //ha
+console.log(instance1.color, instance2.color, instance2.age) //[ 'red', 'blue', 'yellow' ] [ 'red', 'blue' ] 22
+```
+- 寄生式继承,基于工厂模式，创建一个实现继承的函数并增强对象，使继承的子对象同时具有增强的方法和父对象的属性,但和原型继承类似，这个属性是共享的
+```js
+function createNew(original) {
+    let clone = new Object(original);
+    clone.sayHi = function () {
+        console.log('Hi')
+    }
+    return clone
+}
+let person = {
+    name: 'lalala',
+    friends: ['a','b','c']
+}
+let anotherPerson = createNew(person)
+anotherPerson.sayHi() //Hi
+console.log(anotherPerson.name) //lalala
+anotherPerson.friends.push('d')
+console.log(person.friends) //[ 'a', 'b', 'c', 'd' ]
+```
+- 寄生式组合继承：为了解决组合继承效率问题，子类构造函数只要在执行时重写自己原型就好了。所有步骤和特性都和组合继承类似，只有extendType.prototype = new superType()，这一步被替换成inheritPrototype(ExtendType,SuperType)，没有重新调用父类构造函数。
+```js
+function inheritPrototype(subType, superType) {
+    let prototype = new Object(superType.prototype)
+    prototype.constructor = subType
+    subType.prototype = prototype
+}
+function SuperType(name) {
+    this.name  = name
+    this.color = ['red','blue']
+}
+SuperType.prototype.sayName = function () {
+    console.log(this.name)
+}
+function ExtendType(name, age) {
+    SuperType.call(this, name)
+    this.age = age
+}
+inheritPrototype(ExtendType,SuperType)
+let ins1 = new ExtendType('ha','11')
+ins1.color.push('yellow')
+let ins2 = new ExtendType('haha', '22')
+ins1.sayName() //ha
+console.log(ins1.color, ins2.color, ins1.age) //[ 'red', 'blue', 'yellow' ] [ 'red', 'blue' ] 11
+```
+- 类
+  - 类并不受函数作用域限制而受块作用域限制，不能声明提前，但他本质仍然是一个特殊的函数。类包含构造函数方法，实例方法，获取函数，设置函数和静态类方法，但这些都不是必须的。
+  - 在类里面写constructor方法会高速解释器在创建实例的时候调用这个函数，在new这个类的时候构造函数会进行如下操作：在内存中创建新对象，新对象内部的prototype指针被赋值构造函数的prototype，构造函数内部的this被赋值新对象，执行构造函数方法，如果构造函数返回非空对象则返回这个对象否则返回新创建的对象。
+  - 类实例化时传入的参数会用做构造函数的参数。类和普通对象一样支持get set访问器，类方法也和对象属性一样可以使用字符串符号或者计算的值做键。
+  - 一个类只能有一个静态方法，非常适合作为实力工厂，和c#一样静态方法不实例化就可以使用。
+  - 类的继承：extends继承任何有原型和construct的对象，派生类会访问原型链和类上定义的方法，this则反映调用相应方法的实例或者类。派生类通过super访问它们的原型，constructor函数super之后才可以访问this。
+  - JS可以通过混入模式多类继承，也可以定义不会实例化的抽象基类，但没有abstract/static class这一类关键字。在React中没有使用混入模式而是组合模式，把方法提取到独立的类和辅助对象里再组合起来，而不使用继承，在设计原则中组合胜过继承。
+  ```js
+  class Person{
+    constructor() {
+        this.name = 'person'
+    }
+  }
+  class Woman extends Person{
+    constructor(){
+        super()
+    }
+    sayName(){
+        console.log(this.name)
+    }
+  }
+  let haha = new Woman()
+  haha.sayName() //person
+  haha.name = 'Jay'
+  haha.sayName() //Jay
+  ```

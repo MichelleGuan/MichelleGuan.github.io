@@ -45,13 +45,86 @@ ints[3] = 'ew'
 //console.log(ints)
 
 
-function pet() { }
-pet.prototype.name = 'hahaah';
-pet.prototype.age = 3;
-pet.prototype.category = 'fish'
-pet.prototype.say = function () {
-    console.log(`Hi,my name is ${this.name}`)
-}
-let petA = new pet()
-petA.say()
+// function pet() { }
+// pet.prototype.name = 'hahaah';
+// pet.prototype.age = 3;
+// pet.prototype.category = 'fish'
+// pet.prototype.say = function () {
+//     console.log(`Hi,my name is ${this.name}`)
+// }
+// let petA = new pet()
+// petA.say()
 
+function superType(name) {
+    this.name  = name
+    this.color = ['red','blue']
+}
+superType.prototype.sayName = function () {
+    //console.log(this.name)
+}
+function extendType(name, age) {
+    superType.call(this, name)
+    this.age = age
+}
+extendType.prototype = new superType()
+let instance1 = new extendType('ha','11')
+instance1.color.push('yellow')
+let instance2 = new extendType('haha','22')
+//instance1.sayName() //ha
+//console.log(instance1.color, instance2.color, instance2.age) //[ 'red', 'blue', 'yellow' ] [ 'red', 'blue' ] 22
+
+function createNew(original) {
+    let clone = new Object(original);
+    clone.sayHi = function () {
+        console.log('Hi')
+    }
+    return clone
+}
+let person = {
+    name: 'lalala',
+    friends: ['a','b','c']
+}
+let anotherPerson = createNew(person)
+//anotherPerson.friends.push('d')
+//console.log(person.friends) //[ 'a', 'b', 'c', 'd' ]
+
+function inheritPrototype(subType, superType) {
+    let prototype = new Object(superType.prototype)
+    prototype.constructor = subType
+    subType.prototype = prototype
+}
+function SuperType(name) {
+    this.name  = name
+    this.color = ['red','blue']
+}
+SuperType.prototype.sayName = function () {
+    console.log(this.name)
+}
+function ExtendType(name, age) {
+    SuperType.call(this, name)
+    this.age = age
+}
+inheritPrototype(ExtendType,SuperType)
+let ins1 = new ExtendType('ha','11')
+ins1.color.push('yellow')
+let ins2 = new ExtendType('haha', '22')
+//ins1.sayName() //ha
+//console.log(ins1.color, ins2.color, ins1.age) //[ 'red', 'blue', 'yellow' ] [ 'red', 'blue' ] 11
+
+class Person{
+    constructor() {
+        this.name = 'person'
+    }
+}
+class Woman extends Person{
+    constructor(){
+        super()
+    }
+    sayName(){
+        console.log(this.name)
+    }
+}
+let haha = new Woman()
+haha.sayName() //person
+haha.name = 'Jay'
+haha.sayName() //Jay
