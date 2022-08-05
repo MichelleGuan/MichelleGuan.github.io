@@ -299,3 +299,312 @@ console.log(ins1.color, ins2.color, ins1.age) //[ 'red', 'blue', 'yellow' ] [ 'r
   haha.name = 'Jay'
   haha.sayName() //Jay
   ```
+
+## 代理与反射
+```js
+const target = {
+  id: "tar",
+  num: 11,
+};
+const handler = {};
+const handler2 = {
+    get(target, prop, receiver) { //定义捕获器
+    return target[prop] * 2;
+  },
+};
+const handler3 = {
+    get: Reflect.get
+};
+const proxy = new Proxy(target, handler);//创建一个空代理，实际上指向同一个对象
+proxy.id = "s";
+console.log(target.id, proxy.id); //s s
+const proxy2 = new Proxy(target, handler2);//对代理的get方法进行操作
+console.log(target.num, proxy2.num) //11 22
+const proxy3 = new Proxy(target, handler3);//使用全局Reflect对象构建默认get行为
+console.log(target.num, proxy3.num) //11 11
+const proxy4 = new Proxy(target, Reflect);//直接使用全局默认行为
+console.log(target.id, proxy4.id); //s s
+//需要注意，如果对象有一个不可写不可配置的属性被改变了会抛出typeError，这个叫捕获器不变式
+//可撤销代理会中断代理对象和目标对象联系，撤销只能进行一次之后调用撤销结果一样，之后调用代理则会报错
+const { proxy ,revoke } = Proxy.revocable(target, handler2);
+console.log(proxy.num, target.num) //22 11
+revoke()
+console.log(proxy.num) //cannot perform 'get' on a proxy that has been revoked
+```
+- 代理可以用来替代对象操作中的try catch, Reflect.defineProperty如果定义失败不会报错而是返回false。提供状态标记的方法还有preventExtentions，setPropertyOf，set，deleteProperty。
+```js
+const o = {}
+try {
+    Object.defineProperty(o, 'a', 1)
+    console.log('success')
+} catch (e) {
+    console.log('fail')
+}
+//只有enumerable: true才能在对象里被打印出来，迭代器方法可见，默认是false
+Object.defineProperty(o, 'a',{
+    enumerable: true,
+    configurable: false,
+    writable: false,
+    value: "static"
+  })
+console.log(o) //{ a: 'static' }
+console.log(Reflect.defineProperty(o, 'a', {value:12})) //false
+```
+- 代理可以捕获13种基本操作，get, set, has, defineProperty, getOwnPropertyDescriptor, deleteProperty, ownKeys, getPropertyOf, setPropertyOf, preventExtentions, construct, apply, isExtensible.
+- 使用代理可以实现以下几个行为：跟踪属性访问（捕获get, set, has），隐藏属性，对属性进行验证防止非法赋值，对函数和类构造函数参数验证（apply construct），数据绑定与可观察对象（比如把集合绑定到事件分派程序上类似rxjs）
+
+## 函数
+- 箭头函数不能使用arguments，super和new.target，也不能用做构造函数没有prototype属性因此不能默认this指向上次层调用对象。
+- 函数名就是指向函数的指针，所以一个函数可以有多个名称，把其中一个设置成null对其他的没影响，这个行为和对象一样。
+- 函数的参数在内部表现为一个数组，函数并不关心数组包含什么（类型数量），函数内可以使用arguments访问参数但箭头函数除外。因为JS的函数没有签名因此也没有重载。
+- ES6后在参数后加一个=可以设置默认值，也可以使用...展开操作符传参。
+- 直接使用function name(){}和var一样会带来声明提升，使用let/const = 匿名函数可以避免这个问题。
+- 递归，直接调用自身会在重命名之类的赋值操作出现错误，可以使用下面两种方法。
+  ```js
+  function factorial(num) {
+      if (num <= 1) {
+          return 1
+      } else {
+          return num * factorial(num-1)
+      }
+  }
+  let anotherF = factorial
+  factorial = null
+  console.log(anotherF(4))//factorial is not a function
+  //2.使用arguments.callee引用当前函数，但严格模式报错
+  //return num * arguments.callee(num-1)
+  //3.使用命名函数表达式,在任何模式下都好用
+  let factorial = (function f(num) {
+      if (num <= 1) {
+          return 1
+      } else {
+          return num * f(num-1)
+      }
+  })
+  ```
+- ES6之后如果函数的逻辑允许尾调用将其销毁，那么引擎就会这么做。包括，代码要在严格模式下执行，外部函数return的值是对尾调用函数的调用，尾调用函数返回后不能再进行额外的逻辑运算，尾调用函数不是闭包。函数调用会在内存形成一个"调用记录"，又称"调用帧"（call frame），保存调用位置和内部变量等信息。如果在函数A的内部调用函数B，那么在A的调用记录上方，还会形成一个B的调用记录。等到B运行结束，将结果返回到A，B的调用记录才会消失。如果函数B内部还调用函数C，那就还有一个C的调用记录栈，以此类推。所有的调用记录，就形成一个"调用栈"（call stack）。尾调用由于是函数的最后一步操作，所以不需要保留外层函数的调用记录，因为调用位置、内部变量等信息都不会再用到了，只要直接用内层函数的调用记录，取代外层函数的调用记录就可以了。"尾调用优化"（Tail call optimization），即只保留内层函数的调用记录。如果所有函数都是尾调用，那么完全可以做到每次执行时，调用记录只有一项，这将大大节省内存。
+  ```js
+  "use strict"
+  function fib(n) {
+    if (n < 2) {
+        return n;
+    }
+    return fib(n-1)+fib(n-2) //有相加操作
+  }
+  console.log(fib(40))
+  //102334155
+  //[Done] exited with code=0 in 0.903 seconds
+  //参数100以上直接执行超时
+  function fib(n) {
+    return fibImp (0,1,n) //直接返回函数
+  }
+  function fibImp(a, b, n) {
+    if (n === 0) {
+        return a
+    }
+    return fibImp(b,a+b,n-1) //直接返回函数
+  }
+  console.log(fib(40))
+  //102334155
+  //[Done] exited with code=0 in 0.049 seconds
+  //参数1000也可以快速执行出结果
+  ```
+  下面tco函数是尾递归优化的实现，注意状态变量active。默认情况下，这个变量是不激活的。一旦进入尾递归优化的过程，这个变量就激活了。然后，每一轮递归sum返回的都是undefined，所以就避免了递归执行；而accumulated数组存放每一轮sum执行的参数，总是有值的，这就保证了accumulator函数内部的while循环总是会执行。
+  这样就很巧妙地将“递归”改成了“循环”，而后一轮的参数会取代前一轮的参数，保证了调用栈只有一层。
+  ```js
+  function tco(f) {
+  var value;
+  var active = false;
+  var accumulated = [];
+  return function accumulator() {
+    accumulated.push(arguments);
+    if (!active) {
+      active = true;
+      while (accumulated.length) {
+        value = f.apply(this, accumulated.shift());
+      }
+      active = false;
+      return value;
+    }
+  };
+  }
+  var sum = tco(function(x, y) {
+    if (y > 0) {
+      return sum(x + 1, y - 1)
+    }
+    else {
+      return x
+    }
+  });
+  sum(1, 100000)
+  // 100001
+  ```
+- 闭包指的是那些引用了另一个函数作用域中变量的函数，通常在嵌套函数实现。在闭包使用this如果不使用箭头函数会在运行时绑定到执行函数上。
+```js
+function createCompareFunc(property) {
+    return function (ob1, ob2) {
+        let val1 = ob1[property]
+        let val2 = ob2[property]
+        return !!(val1 > val2)
+    }
+}
+let compare = createCompareFunc('name')
+let result = compare({ name: 'aaa' }, { name: 'bbb' })
+console.log(result) //false,在调用后createCompareFunc的变量没有被销毁，因为在内部compare函数还在使用
+compare = null; //手动解除引用，释放闭包内存
+```
+- 立即调用的匿名函数，即(func(){})(i),常被用来锁定值，比如在let出现之前循环里面用var的时候，可以用来接受i值，在执行上下文后销毁。
+- 在函数或对象内部的变量或者方法在函数外部无法访问到，但可以创建特权方法如this.public=()=>{ privateVar ++; return privateFunc;},这个特权方法其实是一个闭包能够访问构造函数内所有变量和方法。
+
+## 期约与异步函数
+- 以前处理JS异步只能使用回调，在嵌套情况下没有扩展性，Promise有三种状态，pending resolve reject，直接调用resolve，reject方法等于跳过待定状态。需要注意拒绝状态抛出的错误没办法用try catch捕获，因为这些错误在异步消息队列，只能使用promise.then的第二个回调函数或者语法糖catch来处理，同样的promise抛出的错误也不会阻塞。此外所有then类型的方法里面的函数（onResolved,onRejected,catch,finally）都是异步的会作为微任务被排期，链式调用则会进入下一次的排期（2在3后面打印），但浏览器会等所有微任务执行完才进入下一循环的宏任务，因此settimeout会在最后执行。
+```js
+console.log('start')
+let p = Promise.reject(console.log(100))
+console.log('mid1')
+p.then(() => { console.log(0) }, () => { console.log(1) }).finally(() => { console.log(2) })
+console.log('mid2')
+p.catch(() => { console.log(3) })
+setTimeout(() => { p.catch(() => { console.log(4) }) },0)
+console.log('end')
+//start 100 mid1 mid2 end 1 3 2 4
+```
+- Promise.all等待几个promise都返回之后返回状态，只要有一个reject就是reject，而race只管制最快返回的请求，和最快请求状态一致。
+```js
+p2 = Promise.all([Promise.resolve(), Promise.reject()])
+p3 = Promise.all([Promise.resolve(), Promise.resolve()])
+p4 = Promise.race([Promise.resolve(), Promise.reject()])
+p5 = Promise.race([Promise.reject(),Promise.resolve()])
+p2.then(() => { console.log(true) }, (() => { console.log(false) })) //false
+p3.then(() => { console.log(true) }, (() => { console.log(false) })) //true
+p4.then(() => { console.log(true) }, (() => { console.log(false) })) //true
+p5.then(() => { console.log(true) }, (() => { console.log(false) })) //false
+```
+- 我们可以给promise扩展cancel或者notify的功能, cancel其实就是根据业务需要手动的reject或者resolve，下面是promises-notify的源码，这个库会在每个promise结束的时候给出提示。
+```js
+const makeCancelable = (promise) => {
+  let hasCanceled_ = false;
+
+  const wrappedPromise = new Promise((resolve, reject) => {
+    promise.then((val) =>
+      hasCanceled_ ? reject({isCanceled: true}) : resolve(val)
+    );
+    promise.catch((error) =>
+      hasCanceled_ ? reject({isCanceled: true}) : reject(error)
+    );
+  });
+  return {
+    promise: wrappedPromise,
+    cancel() {
+      hasCanceled_ = true;
+    },
+  };
+};
+const cancelablePromise = makeCancelable(
+  new Promise(r => component.setState({...}}))
+);
+cancelablePromise
+  .promise
+  .then(() => console.log('resolved'))
+  .catch((reason) => console.log('isCanceled', reason.isCanceled));
+cancelablePromise.cancel(); // Cancel the promise
+```
+```js
+class PromisesNotify {
+  constructor(promises) {
+    this.promises = promises;
+  }
+  onEach(callback) {
+    const errorCall = (index, promise, error) => callback({
+      index,
+      promise,
+      result:null,
+      error
+    });
+
+    this.promises.forEach((promise, index) => 
+      promise.then((result) => {
+          callback({
+            index,
+            promise,
+            result
+          });
+        }, error => errorCall(index, promise, error)
+      )
+      .catch(error => errorCall(index, promise, error))
+    );
+  }
+  onAll(callback) {
+    let counter = 0;
+    const resolveOnCondition = () => {
+      if (++counter === this.promises.length) {
+        callback();
+      }
+    };
+    this.promises.forEach(promise => promise.then(resolveOnCondition).catch(resolveOnCondition));
+  }
+}
+```
+- async只是异步函数标识符不起什么作用，异步函数被调用await前面的部分也是正常在同步队列的，await则记录在哪里暂停执行，在await的值可用之后会继续后面代码的执行，就算值立即可用这个同样是异步的。按照第四版红宝书原本如果await的是一个promise则会有两个任务进入消息队列，第二个是await期约的处理程序，所以会在立即执行await返回跑完之后再返回，但实际上TC39修改了这个规范现在的打印效果如下。 [Truly understanding Async/Await](https://www.codementor.io/@narzerus/truly-understanding-async-await-inbpoh677)   [async、await 实现原理](https://zhuanlan.zhihu.com/p/115112361)
+```js
+async function thingOne() { ... }
+async function thingTwo(value) { ... }
+async function thingThree(value) { ... }
+async function doManyThings() {
+  var result = await thingOne();
+  var resultTwo = await thingTwo(result);
+  var finalResult = await thingThree(resultTwo);
+  return finalResult;
+}
+```
+```js
+async function foo() {
+    console.log(2);
+    console.log(await Promise.resolve(8))
+    console.log(9)
+}
+async function bar() {
+    console.log(4)
+    console.log(await 6)
+    console.log(7)
+}
+console.log(1)
+foo()
+console.log(3)
+bar()
+console.log(5)
+// 1 2 3 4 5 8 9 6 7
+```
+
+## 其他
+- BOM（浏览器对象模型）包含window对象（复用为global），location对象（hash host query），navigator对象包含useragent提供浏览器信息，还有screen和history(goto)对象.
+- 基于useragent的代理检测不是绝对准确的，部分浏览器会伪装自己的信息，所以有时候要进行能力检测。navigator对象也提供地理位置电池状态等API，screen提供屏幕角度等，可以访问部分设备硬件信息。
+- MutationObserver可以检测DOM节点变化，并提供回调函数，提供disconnect方法，并且该方法不会结束观察者生命周期可以绑定其他目标节点。当观察结点从DOM移除，observer会被垃圾回收。
+- DOM由Node（基准节点），Document（树形结构根节点），Element（HTML or XML），Text注释等其他类型组成。DOM操作nodelist是实时更新，每次访问都会做一次新的查询所以性能较差。
+- DOM提供selector API包括querySelector，querySelectorAll和matches。H5提供了包括innerHTML标准化，焦点管理，字符集，滚动的特性。DOM遍历Element traversal提供了childElementCount,firstElementChild,lastElementChild,previousElementSibling,nextElementSibling.
+- DOM提供NodeIterator（只能向前或者向后）和TreeWalker（类似Element traversal可以找父子兄弟节点），DOM3可以操作范围和set，整体复制和移除。
+- 每个元素都有自己的style，要确定元素计算样式可以使用getComputedStyle，可以使用document.styleSheets访问所有样式表。
+- 所有浏览器都支持事件冒泡，现代浏览器会一直冒泡到window对象，大部分浏览器都支持事件捕获。事件先进行事件捕获层层向下到达目标再向上事件冒泡。addEventlistener和removeEventListener都是在事件冒泡阶段调用的。prevebtDefault可以取消事件默认行为，只有cancelable为true才可以调用，stopPropagation取消后续事件冒泡或捕获只有bubbles为true才可用，stopImmidiatePropagation取消后续事件冒泡或捕获并阻止调用任何后续事件处理程序。
+- 常见事件界面load unload resize select scroll click，触摸屏mousemove/down/up/wheel/over/out，键盘的keydown/press/up.Contextmenu可以定义右键菜单，safari也支持屏幕横竖和角度API，以及触摸手势。
+- 由于事件冒泡，多个子节点事件可以委托给父节点，直接把事件加到父节点上然后用switch区分id就可以。最好使用委托限制页面事件处理程序数量并且在离开页面前卸载所有事件处理程序。
+- requestAnimationFrame（每次重绘最多只调用一次回调函数）可以用于动画和替代setInterval。
+- Canvas与webgl
+```js
+<canvas id ='draw' width ='100' height='100'></canvas>
+let context = document.getElementById('draw').getContext("2d")
+context.fillStyle = "#fff000"
+context.fillRect(10,10,50,50) //画矩形
+context.beginPath()
+context.arc(x,y,radius半径,startAngle,endAngle,counterclockwise顺逆时针) //(100,100,99,0,2*Math.PI,false) 圆形
+context.stroke()
+
+let gl = document.getElementById('draw').getContext('webgl')
+gl.clearColor(0,0,0,1)
+gl.clear(gl.COLOR_BUFFER_BIT) //用黑色清理区域
+gl.viewport(0,0,drawing.width,drawing.height) //定义视窗
+let buffer = gl.createBuffer()
+gl.bindBuffer(gl.ARRAY_BUFFER,buffer)
+dl.bufferData(gl.ARRAY_BUFFER,new Float32Array([0,0.5,1]),gl.STATIC_DRAW)
+//编写着色器然后绘制图形 https://webglfundamentals.org/webgl/lessons/webgl-drawing-without-data.html
+```
+- JS除了ArrayBuffer还提供SharedArrayBuffer（可以同时被多个上下文使用），但他的操作同一时刻只能有一个，即原子操作（Atomic API）。原子算数和读写都有线程锁会返回相同位置，不会被其他线程中断或者改变顺序，一个操作结束才会进行下一个。此外JS有原生拖拽API和读写转换流以及记时API。
